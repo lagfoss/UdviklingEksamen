@@ -21,14 +21,14 @@ namespace UdviklingEksamen.Controllers
             _context = context;
         }
 
-        // GET: api/Kategoris
+        // GET: api/kategoris
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Kategori>>> GetKategoris()
         {
             return await _context.Kategoris.ToListAsync();
         }
 
-        // GET: api/Kategoris/5
+        // GET: api/kategoris/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<Kategori>> GetKategori(int id)
         {
@@ -42,9 +42,7 @@ namespace UdviklingEksamen.Controllers
             return kategori;
         }
 
-        // PUT: api/Kategoris/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        // PUT: api/kategoris/{id}
         [HttpPut("{id}")]
         public async Task<IActionResult> PutKategori(int id, Kategori kategori)
         {
@@ -74,9 +72,7 @@ namespace UdviklingEksamen.Controllers
             return NoContent();
         }
 
-        // POST: api/Kategoris
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        // POST: api/kategoris
         [HttpPost]
         public async Task<ActionResult<Kategori>> PostKategori(Kategori kategori)
         {
@@ -86,7 +82,7 @@ namespace UdviklingEksamen.Controllers
             return CreatedAtAction("GetKategori", new { id = kategori.Id }, kategori);
         }
 
-        // DELETE: api/Kategoris/5
+        // DELETE: api/Kategoris/{id}
         [HttpDelete("{id}")]
         public async Task<ActionResult<Kategori>> DeleteKategori(int id)
         {
